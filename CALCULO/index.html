@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de Crecimiento Logístico</title>
+    <!-- Fuentes modernas para un diseño profesional -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="./grafica.webp">
+    <!-- Vinculación explícita con ./ para forzar la búsqueda en la misma ruta local -->
+    <link rel="stylesheet" href="./style.css">
+    <!-- Chart.js para visualizaciones impactantes -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>MODELO DE CRECIMIENTO LOGÍSTICO</h1>
+            <p>Modelado y proyección de crecimiento de usuarios usando Integración de Simpson 1/3</p>
+        </header>
+
+        <main>
+            <!-- Tarjetas de métricas clave -->
+            <section class="cards-container">
+                <div class="stat-card">
+                    <h3>Usuarios Totales (1er Año)</h3>
+                    <div class="value" id="totalUsers">0</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Almacenamiento Total (GB)</h3>
+                    <div class="value" id="storageGb">0</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Crecimiento Promedio</h3>
+                    <div class="value" id="avgRate">0</div>
+                </div>
+            </section>
+
+            <!-- Contenedores de gráficos -->
+            <section class="charts-container">
+                <div class="chart-box">
+                    <h2>Crecimiento Acumulado: N(t)</h2>
+                    <div class="canvas-wrapper">
+                        <canvas id="ntChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-box">
+                    <h2>Tasa de Nuevos Usuarios: f(t)</h2>
+                    <div class="canvas-wrapper">
+                        <canvas id="ftChart"></canvas>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Tabla de validación (Simpson 1/3) -->
+            <section class="table-container">
+                <h2>Validación de la Tasa de Crecimiento (Simpson 1/3)</h2>
+                <table id="simpsonTable">
+                    <thead>
+                        <tr>
+                            <th>Mes (t)</th>
+                            <th>f(t) evaluado</th>
+                            <th>Coeficiente</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Poblado de forma dinámica por JS -->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+    
+    <!-- Vinculación explícita con ./ -->
+    <script src="./script.js"></script>
+</body>
+</html>
